@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public class DownloadablePanel {
+import javax.swing.JPanel;
+public class DownloadablePanel extends JPanel{
+
 }

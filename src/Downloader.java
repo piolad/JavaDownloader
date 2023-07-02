@@ -3,24 +3,25 @@ import java.net.URL;
 enum STATUS  { DOWNLOADING, PAUSED, STOPPED};
 
 
-public class DownlodableInfo {
+public class Downloader {
     private URL url;
-    private STATUS status;
-    private double progress;
 
-    public DownlodableInfo(URL url){
+    private STATUS status;
+    private long downloaded;
+
+    public Downloader(URL url){
         this.url = url;
         this.status = STATUS.STOPPED;
-        this.progress = 0;
+        this.downloaded = 0;
     }
-    public DownlodableInfo(URL url, STATUS status, double progress){
+    public Downloader(URL url, STATUS status, long progress){
         this.url = url;
         this.status = status;
-        this.progress = progress;
+        this.downloaded = progress;
     }
 
-    public void setProgress(double progress) {
-        this.progress = progress;
+    public void setDownloaded(long downloaded) {
+        this.downloaded = downloaded;
     }
 
     public void setStatus(STATUS status) {
@@ -39,8 +40,10 @@ public class DownlodableInfo {
         return status;
     }
 
-    public double getProgress() {
-        return progress;
+    public long getDownloaded() {
+        return downloaded;
     }
+
+
 }
 
